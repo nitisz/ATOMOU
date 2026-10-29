@@ -634,9 +634,11 @@ function App() {
   useEffect(() => {
     if (!authToken || !currentUser) return
 
-    const socket = io('http://localhost:4001', {
-      auth: { token: authToken },
-    })
+   
+const socket = io('https://atomou-backend.onrender.com', {
+  auth: { token: authToken },
+})
+
 
     socketRef.current = socket
 

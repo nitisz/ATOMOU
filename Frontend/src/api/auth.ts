@@ -1,5 +1,7 @@
 
-const API_URL = 'http://localhost:4001/api/auth'
+
+const API_URL = 'https://atomou-backend.onrender.com';
+
 
 export type AuthUser = {
   id: string

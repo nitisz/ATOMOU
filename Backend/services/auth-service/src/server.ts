@@ -15,8 +15,12 @@ const httpServer = createServer(app)
 const PORT = Number(process.env.PORT) || 4001
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'https://atomou.vercel.app'
+  ],
 }))
+
 
 app.use(express.json({ limit: '16kb' }))
 

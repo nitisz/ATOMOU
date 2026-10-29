@@ -14,10 +14,14 @@ type SendMessageInput = {
   text: string
 }
 
+
 export function attachSocketServer(httpServer: HttpServer) {
   const io = new Server(httpServer, {
     cors: {
-      origin: 'http://localhost:5173',
+      origin: [
+        'http://localhost:5173',
+        'https://atomou.vercel.app',
+      ],
       methods: ['GET', 'POST'],
     },
   })

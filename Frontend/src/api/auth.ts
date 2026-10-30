@@ -1,4 +1,4 @@
-const API_URL = 'https://atomou-backend.onrender.com/api/auth/signup';
+const API_URL = 'https://atomou-backend.onrender.com/api/auth';
 
 export type AuthUser = {
   id: string;
@@ -18,7 +18,9 @@ async function requestAuth(
   endpoint: 'signup' | 'login',
   data: Record<string, string>,
 ): Promise<AuthResponse> {
-  const response = await fetch(`${API_URL}/${endpoint}`, {
+console.log('ACTUAL API URL:', `${API_URL}/${endpoint}`);
+
+const response = await fetch(`${API_URL}/${endpoint}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
